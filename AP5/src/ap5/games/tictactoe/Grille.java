@@ -1,5 +1,11 @@
 package ap5.games.tictactoe;
 
+/**
+ * 
+ * @author charlerlin
+ *
+ */
+
 public class Grille {
 
 	protected Pion[][] grille;

@@ -1,5 +1,11 @@
 package ap5.games;
 
+/**
+ * 
+ * @author charlerlin
+ *
+ */
+
 public class Joueur extends AbstractJoueur {
 
 	/**

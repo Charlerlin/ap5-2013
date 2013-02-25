@@ -1,5 +1,11 @@
 package ap5.games.tictactoe;
 
+/**
+ * 
+ * @author charlerlin
+ *
+ */
+
 public class Pion {
 	public static final Pion croix;
 	public static final Pion rond;

@@ -2,6 +2,12 @@ package ap5.games;
 
 import ap5.games.tictactoe.TicTacToe;
 
+/**
+ * 
+ * @author charlerlin
+ *
+ */
+
 public class Games {
 
 	/**

@@ -5,6 +5,12 @@ import java.util.Scanner;
 import ap5.games.IGame;
 import ap5.games.Joueur;
 
+/**
+ * 
+ * @author charlerlin
+ *
+ */
+
 public class TicTacToe implements IGame {
 	protected Grille grille;
 	protected Joueur j1;
