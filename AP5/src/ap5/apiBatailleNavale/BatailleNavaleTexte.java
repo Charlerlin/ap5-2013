@@ -1,4 +1,4 @@
-package asr5.apiBatailleNavale;
+package ap5.apiBatailleNavale;
 
 import batailleNavale.modele.BatailleNavale;
 
