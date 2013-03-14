@@ -2,6 +2,6 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="/Users/charlerlin/git/Charlerlin/ap5-2013/AP5/lib/batailleNavale.jar"/>
+	<classpathentry kind="lib" path="lib/batailleNavale.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
