@@ -15,7 +15,7 @@ import javax.swing.JPanel;
  *
  */
 
-//Cette classe est encore inerte du à un priblème de conception qui empêchait de la relier à la classe principale
+//Cette classe est encore inerte du à un problème de conception qui empêchait de la relier à la classe principale
 public class Keypad extends JPanel{
 	protected JButton b0;
 	protected JButton b1;
@@ -34,11 +34,14 @@ public class Keypad extends JPanel{
 	protected JButton bmult;
 	protected JButton bdiv;
 	
+	protected Calculator calc;
 	
-	public Keypad(){
+	
+	public Keypad(Calculator c){
 		this.setLayout(new GridLayout(4,4,10,10));
 		this.createButtons();
 		this.addButtons();
+		calc = c;
 	}
 	
 	protected void createButtons(){
@@ -54,11 +57,15 @@ public class Keypad extends JPanel{
 		b9 = new JButton("9");
 		bdot = new JButton(".");
 		beq = new JButton("=");
-//		beq.addActionListener(Calculator.addBL(this));
+		beq.addActionListener(new ButtonController(this));
 		bplus = new JButton("+");
 		bminus = new JButton("-");
 		bmult = new JButton("*");
 		bdiv = new JButton("/");
+		bplus.addActionListener(new ButtonController(this));
+		bminus.addActionListener(new ButtonController(this));
+		bmult.addActionListener(new ButtonController(this));
+		bdiv.addActionListener(new ButtonController(this));
 	}
 	protected void addButtons(){
 		this.add(b7);
@@ -82,7 +89,7 @@ public class Keypad extends JPanel{
 	
 	public static void main(String[] args) {
 		JFrame f = new JFrame("Keypad");
-		f.getContentPane().add(new Keypad());
+		f.getContentPane().add(new Keypad(null));
 		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		f.pack();
 		f.setVisible(true);
