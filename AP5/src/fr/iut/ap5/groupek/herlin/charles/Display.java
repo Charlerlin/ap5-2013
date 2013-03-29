@@ -26,17 +26,20 @@ public class Display extends JPanel{
 	protected JComboBox op; 
 	protected JButton equals;
 	protected JLabel result;
+	
+	protected Calculator calc;
 
 	public static final char PLUS = '+';
 	public static final char MINUS = '-';
 	public static final char MULT = '*';
 	public static final char DIV = '/';
 
-	public Display(){
+	public Display(Calculator c){
 		this.setLayout(new BoxLayout(this, BoxLayout.X_AXIS));
 		this.createElements();
 		this.addElements();
 		this.setPreferredSize(new Dimension(300, 25));
+		calc = c;
 	}
 
 	/**
@@ -119,13 +122,13 @@ public class Display extends JPanel{
 	 */
 	public void changeOp(char opc){
 		switch(opc){
-		case PLUS : op.setSelectedItem(PLUS);
+		case PLUS : op.setSelectedItem(""+PLUS);
 		break; 
-		case MINUS : op.setSelectedItem(MINUS);
+		case MINUS : op.setSelectedItem(""+MINUS);
 		break;
-		case MULT : op.setSelectedItem(MULT);
+		case MULT : op.setSelectedItem(""+MULT);
 		break;
-		case DIV : op.setSelectedItem(DIV);
+		case DIV : op.setSelectedItem(""+DIV);
 		break;
 		}
 	}
@@ -159,7 +162,7 @@ public class Display extends JPanel{
 
 	public static void main(String[] args) {
 		JFrame f = new JFrame("Keypad");
-		f.getContentPane().add(new Display());
+		f.getContentPane().add(new Display(null));
 		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		//		f.setPreferredSize(new Dimension(400, 75));
 		f.pack();

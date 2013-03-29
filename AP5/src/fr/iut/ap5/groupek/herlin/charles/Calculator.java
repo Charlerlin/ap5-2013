@@ -1,8 +1,5 @@
 package fr.iut.ap5.groupek.herlin.charles;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
 import javax.swing.BoxLayout;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -19,14 +16,20 @@ public class Calculator extends JPanel{
 	
 	public Calculator(){
 		this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
-		disp = new Display();
-		keyp = new Keypad();
+
+		disp = new Display(this);
+		keyp = new Keypad(this);
 		this.add(disp);
 		this.add(keyp);
 	}
 	
+	/**
+	 * fonction inutilisée
+	 * @param kp
+	 * @return
+	 */
 	public ButtonController addBL(Keypad kp){
-		return new ButtonController(this);
+		return new ButtonController(this.keyp);
 	}
 
 	
