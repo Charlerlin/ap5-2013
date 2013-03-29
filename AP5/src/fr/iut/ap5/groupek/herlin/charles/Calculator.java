@@ -20,9 +20,9 @@ public class Calculator extends JPanel{
 	public Calculator(){
 		this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 		disp = new Display();
-		//keyp = new Keypad();
+		keyp = new Keypad();
 		this.add(disp);
-		//this.add(keyp);
+		this.add(keyp);
 	}
 	
 	public ButtonController addBL(Keypad kp){
@@ -31,7 +31,7 @@ public class Calculator extends JPanel{
 
 	
 	public static void main(String[] args) {
-		JFrame f = new JFrame("Keypad");
+		JFrame f = new JFrame("Calculator");
 		f.getContentPane().add(new Calculator());
 		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		f.pack();
