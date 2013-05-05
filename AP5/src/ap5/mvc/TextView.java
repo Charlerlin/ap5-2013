@@ -11,18 +11,22 @@ import javax.swing.JTextField;
 public class TextView extends JFrame implements Observer {
 	
 	private JLabel lr, lv, lb;
-	private JTextField tr, tv, tb;
-	private RVBModel model;
+	protected JTextField tr, tv, tb;
+	protected RVBModel model;
 	
 	public TextView(RVBModel m) {
 		model = m;
+		this.model.addObserver(this);
 		this.setLayout(new GridLayout(3, 2));
 		lr = new JLabel("R=");
 		lv = new JLabel("V=");
 		lb = new JLabel("B=");
 		tr = new JTextField(""+model.getR());
+		tr.addKeyListener(new KeyController(this));
 		tv = new JTextField(""+model.getV());
+		tv.addKeyListener(new KeyController(this));
 		tb = new JTextField(""+model.getB()); 
+		tb.addKeyListener(new KeyController(this));
 		this.add(lr);
 		this.add(tr);
 		this.add(lv);
@@ -36,8 +40,9 @@ public class TextView extends JFrame implements Observer {
 
 	@Override
 	public void update(Observable o, Object arg) {
-		// TODO Auto-generated method stub
-
+		tr.setText(""+model.getR());
+		tv.setText(""+model.getV());
+		tb.setText(""+model.getB());
 	}
 
 }
